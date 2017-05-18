@@ -8,6 +8,8 @@ const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
 const cors         = require('cors');
 
+// const entries      = require('./routes/api/journal-entries');
+
 mongoose.connect('mongodb://localhost/journal-development');
 
 const app = express();
@@ -35,7 +37,10 @@ app.use('/', index);
 app.all('/*', function (req, res) {
   res.sendfile(__dirname + '/public/index.html');
 });
+
+// app.use('/api', entries);
 // catch 404 and forward to error handler
+
 app.use((req, res, next) => {
   const err = new Error('Not Found');
   err.status = 404;

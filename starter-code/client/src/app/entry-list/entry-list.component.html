@@ -1,0 +1,10 @@
+// template of entry-list component
+<app-entry-form></app-entry-form>
+<h1> Entry list </h1>
+<div>
+  <div *ngFor="let entry of entryList">
+    <h3> {{ entry.title }}&nbsp;</h3>
+    <p> {{ entry.date }} </p>
+    <a [routerLink]="['/entry', entry._id]"> View Details </a>
+  </div>
+</div>

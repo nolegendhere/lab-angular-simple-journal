@@ -1,0 +1,12 @@
+<!-- // template of entry-details component -->
+
+<h1> Entry details </h1>
+<a [routerLink]="['']"> Back to list </a>
+
+<div *ngIf="entry">
+  <div class="entry-info">
+    <h2> {{ entry.title }}&nbsp;</h2>
+    <h3> {{ entry.date }} </h3>
+    <p>{{ entry.content }}</p>
+  </div>
+</div>

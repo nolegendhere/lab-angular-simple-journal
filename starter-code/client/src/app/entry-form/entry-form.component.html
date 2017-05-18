@@ -1,0 +1,30 @@
+<p>
+  entry-form works!
+</p>
+<form class="entry-form" (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
+  <p> Title
+    <input type="text" name="title" #myTitle="ngModel" [(ngModel)]="title" required />
+  </p>
+  <div *ngIf="myTitle.errors && (myTitle.dirty || myTitle.touched)">
+    <p class="error" [hidden]="!myTitle.errors.required">
+      Title is required
+    </p>
+  </div>
+  <p> Date
+    <input type="date" name="date" #myDate="ngModel" [(ngModel)]="date" required />
+  </p>
+  <div *ngIf="myDate.errors && (myDate.dirty || myDate.touched)">
+    <p class="error" [hidden]="!myDate.errors.required">
+      Date is required
+    </p>
+  </div>
+  <p> Content
+    <input type="text" name="content" #myContent="ngModel" [(ngModel)]="content" required />
+  </p>
+  <div *ngIf="myContent.errors && (myContent.dirty || myContent.touched)">
+    <p class="error" [hidden]="!myContent.errors.required">
+      Content is required
+    </p>
+  </div>
+  <button type="submit"> Create Entry </button>
+</form>
